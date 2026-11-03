@@ -19,7 +19,33 @@ It distils what worked (and what silently broke) while taking a young Next.js to
 
 Set the user's expectations honestly: first impressions for long-tail pages usually appear in 2–6 weeks; head terms take months and backlinks. "Fast" SEO means picking fights the site can win.
 
-## Workflow
+## Choose the depth first
+
+Most SEO requests are small. Pick the mode before doing anything, because the full workflow costs several times more time and tokens than a small change needs.
+
+**Quick mode** is for edits to one or two pages where the keyword is known or obvious: retitling a page, writing a meta description, adding FAQs, fixing a flagged issue, or adding a page to a project that already has an SEO pattern to copy. In quick mode:
+- Do not read the reference files and do not research the live SERP, unless a check below fails or you genuinely cannot decide.
+- Follow the project's existing SEO pattern: its metadata helper, content config and schema components.
+- Make the change, then run the quick checklist below on the result. If there is built or served HTML, run `scripts/seo_check.py` once on it.
+- Report in a few lines. Mention anything bigger you noticed as a one-line "Also worth doing", without investigating it.
+
+**Quick checklist** (the page under change only):
+1. Title is unique, starts with the keyword, ≤ 60 characters. Description is 120–160 characters and makes only true claims.
+2. Exactly one H1, and the main copy, H1 and FAQ answers are in server HTML (not client-only, not `opacity:0`, not unmounted).
+3. The page sets its own canonical, is indexable, and is in the sitemap. Hidden pages use `noindex` and are not disallowed in robots.txt.
+4. 3–5 internal links out, and at least one link in.
+5. Structured data matches visible content, with no ratings that aren't the site's own.
+
+**Full mode** is the workflow below. Use it for:
+- a new site, page set or cluster
+- choosing keywords when the right target is unclear
+- diagnosing "why isn't this ranking" or "traffic is flat"
+- a pre-launch or site-wide audit
+- an off-page plan
+
+A quick check may reveal a site-wide problem, such as an inherited canonical, a soft-404 pattern or fabricated ratings. Do not quietly expand the job: finish the requested change, put the problem at the top of your report with one line on why it matters, and offer the full pass. The user decides whether to spend on it. The exception is when the requested change cannot work without the fix, for example when the page you are editing has no server-rendered H1. In that case, fix the minimum needed and say so.
+
+## Workflow (full mode)
 
 Run the phases in order for a new site or page set. For a single-page change, do phases 3, 4 and 6 at minimum. Read the linked reference file when you reach a phase — each one holds the detailed checklist and templates.
 

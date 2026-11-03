@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: quick-title-update
+expected_outcome: |
+  A small, focused change: the JSON formatter page gets a keyword-led title (<= 60 chars) and a 120-160 char
+  description wired into its metadata, other tools are untouched, and the serious site-wide problems in the
+  project (root canonical leaking to every page, client-only H1, fabricated aggregateRating) are flagged as
+  follow-ups rather than silently rewritten. Tests that quick mode keeps cost close to baseline.
+context:
+  scaffold_script: place-files.sh

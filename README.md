@@ -14,15 +14,22 @@ The rules come from a real production site that went from zero to page-one ranki
 
 ```bash
 # Personal skill (available in every project)
-git clone https://github.com/wali-developer/dev-seo-skill.git ~/.claude/skills/seo-playbook
+git clone https://github.com/wali-developer/seo-playbook.git ~/.claude/skills/seo-playbook
 
 # Or per project
-git clone https://github.com/wali-developer/dev-seo-skill.git .claude/skills/seo-playbook
+git clone https://github.com/wali-developer/seo-playbook.git .claude/skills/seo-playbook
 ```
 
 Keep the target folder name `seo-playbook` so that it matches the skill's `name` field.
 
 Claude Code picks the skill up automatically. It triggers when you build or edit public pages, touch routes, metadata, sitemaps or robots rules, or mention SEO, keywords, ranking, backlinks or Search Console. You can also invoke it explicitly with `/seo-playbook`.
+
+## Quick mode and full mode
+
+The skill picks a depth before it starts, because most SEO requests are small.
+
+- **Quick mode** covers one or two pages where the keyword is known: retitling a page, writing a meta description, adding FAQs, fixing a flagged issue. The agent follows the project's existing SEO pattern and runs a five-point checklist without reading the reference files or researching live search results. Any bigger problem it notices is flagged and offered, not silently fixed.
+- **Full mode** covers new sites and page sets, unclear keyword choices, "why isn't this ranking?", pre-launch audits and off-page plans. It runs the six-phase workflow with live SERP checks.
 
 ## What's inside
 
@@ -58,7 +65,7 @@ The playbook works on its own. If you also have narrower SEO skills installed (f
 
 ## Tests
 
-`evals/` holds five test cases in the format `claude plugin eval` reads:
+`evals/` holds six test cases in the format `claude plugin eval` reads:
 
 | Case | What it checks |
 |---|---|
@@ -67,6 +74,7 @@ The playbook works on its own. If you also have narrower SEO skills installed (f
 | `gsc-export-prioritise` | Turning a Search Console CSV into a prioritised plan |
 | `new-site-keyword-map` | Keyword research and a keyword map for a new domain |
 | `offpage-launch-plan` | A zero-budget backlink and launch plan |
+| `quick-title-update` | A one-page title and description change that should stay small and cheap (quick mode) |
 
 Results from the last benchmark: one run per configuration, with the same model with and without the skill, against 61 graded checks.
 
@@ -88,7 +96,7 @@ A capable model without the skill already catches most textbook SEO problems. Th
 - keywords whose search intent doesn't match the product
 - launching dozens of near-identical pages at once
 
-The cost is about 1.6× the tokens and time, which mostly goes on reading the references and checking live search results. Several checks were written after a first round of runs, to target differences seen there, so read the scores as directional.
+**Cost.** Full-mode tasks use about 1.6× the tokens and time of the same model without the skill, mostly reading references and checking live search results. Quick mode brings small edits close to baseline. In a single-page title and description change (`quick-title-update`), both configurations passed 5/5: 57k tokens and 98 s with the skill against 46k tokens and 64 s without, about 1.25×. Several checks were written after a first round of runs, to target differences seen there, and each configuration ran once, so read the scores as directional.
 
 To run them with Claude Code (these are real, billed model runs):
 
