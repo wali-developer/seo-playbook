@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: new-site-keyword-map
+expected_outcome: |
+  A keyword map (one primary keyword per URL, no duplicates) with intent and placement guidance,
+  grounded in a look at the real SERP, that acknowledges 'invoice generator' is dominated by strong
+  brands and prioritises winnable long-tail/modifier and spoke pages (e.g. invoice templates by
+  profession/country, multi-currency, no-signup), plus supporting informational content linked to the
+  money pages, honest volume caveats and realistic timeline expectations.

@@ -1,0 +1,12 @@
+schema_version: "1.1"
+name: nextjs-new-tool-page
+expected_outcome: |
+  The password generator is registered as /tools/password-generator with a keyword-led title and
+  description, a server-rendered H1, intro and FAQs, per-page canonical, JSON-LD without fabricated
+  ratings, and a sitemap entry. The shared traps in the project are fixed or clearly flagged: soft
+  404s from dynamic params, metadata miss branch without noindex, root-layout canonical inheritance,
+  route-level loading.tsx, entrance animations rendering the H1 at opacity 0, FAQ answers unmounted
+  when closed, robots.txt blocking a noindexed path, fabricated aggregateRating, and a sitemap
+  lastModified that changes every request.
+context:
+  scaffold_script: place-files.sh

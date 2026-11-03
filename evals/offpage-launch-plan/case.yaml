@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: offpage-launch-plan
+expected_outcome: |
+  A practical, zero-budget off-page plan for a developer audience: Search Console/Bing
+  Webmaster/IndexNow setup, GitHub-specific tactics (README link, topics, awesome-list PRs), community
+  launches written to each community's norms (Show HN, Reddit, dev.to, Product Hunt), curated
+  directories (AlternativeTo etc.), linkable assets, at least one ready-to-use post or outreach draft,
+  a sequenced calendar, measurement, explicit warnings against buying links/PBNs/mass directory
+  submission, and a note that the user should approve/post things themselves.

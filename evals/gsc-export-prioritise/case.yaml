@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: gsc-export-prioritise
+expected_outcome: |
+  A prioritised plan grounded in the CSV: fix the sourdough starter page's very low CTR at position ~3
+  with a title/description rewrite; resolve the overnight-oats cannibalisation between /overnight-oats
+  and /blog/overnight-oats-5-ways; push the striking-distance pages (chicken curry at ~11–13, vegan
+  banana bread at ~14) with content and internal links; treat /pasta at position 52–58 as an
+  authority/intent problem (retarget to long tail like the one-pot lemon garlic pasta it already ranks
+  for, or earn links) rather than rewriting copy; protect the boiled-eggs winner.
+context:
+  scaffold_script: place-files.sh

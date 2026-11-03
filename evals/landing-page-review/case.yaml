@@ -1,0 +1,12 @@
+schema_version: "1.1"
+name: landing-page-review
+expected_outcome: |
+  A prioritised report that puts the leftover `noindex, nofollow` robots meta first as a launch
+  blocker, and covers missing meta description and canonical, the over-long stuffed title, two H1s and
+  skipped heading levels, the H1/intro rendered at opacity 0 by an animation library, FAQ schema whose
+  questions are not visible on the page, an aggregateRating and placeholder testimonials with no real
+  reviews (policy risk), HowTo/FAQ rich results no longer being available, images missing
+  alt/dimensions and a lazy-loaded hero image, missing html lang and og tags, and vague 'click here'
+  anchors. landing.html is unchanged.
+context:
+  scaffold_script: place-files.sh
